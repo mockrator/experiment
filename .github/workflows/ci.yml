@@ -30,10 +30,10 @@ jobs:
           node -v  
           pnpm --version  
       - name: Install dependencies using PNPM
+        working-directory: package
         run: pnpm install --no-frozen-lockfile
 
       - name: Build Package
+        working-directory: package
         run: |
           pnpm build
-
-          cd package
